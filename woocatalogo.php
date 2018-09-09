@@ -21,3 +21,11 @@ function wooCatalogo_remove_menu_pages() {
 }
 
 add_action('admin_menu', 'wooCatalogo_remove_menu_pages',999);
+
+// Eliminamos metaboxes del Dashboard
+ 
+    function wooCatalogo_remove_dashboard_widgets() {
+            remove_meta_box( 'woocommerce_dashboard_status', 'dashboard', 'side' );
+    } 
+ 
+    add_action('wp_dashboard_setup', 'wooCatalogo_remove_dashboard_widgets' );
